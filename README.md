@@ -17,3 +17,6 @@ Don't forget to create your own app/credientials file following this :
         SCOPES: ['extended_read','sleep_read']
     };
 ```
+
+Currently looking like : 
+![Screenshot](http://i.imgur.com/UGxCxzl.png)
