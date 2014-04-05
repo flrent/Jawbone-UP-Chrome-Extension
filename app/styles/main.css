@@ -1,0 +1,31 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+
+html {
+    /* Defaults css for cssmin process */
+
+}
+
+body {
+  width: 500px;
+  height: 500px;
+}
+
+h1 {
+  margin-top: 10px;
+}
+
+h1 img {
+  min-width: 50px;
+  height:50px;
+  margin-right: 10px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.navbar-fixed-bottom p {
+  margin-top: 10px;
+}
+
+pre {
+  height: 300px;
+  overflow: scroll;
+}

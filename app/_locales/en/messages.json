@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Jawbone-Chrome",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "See your Jawbone UP stats from your browser",
+    "description": "The description of the application"
+  }
+}
