@@ -18,5 +18,4 @@ Don't forget to create your own app/credientials file following this :
     };
 ```
 
-Currently looking like : 
-![Screenshot](http://i.imgur.com/UGxCxzl.png)
+![Screenshot](http://i.imgur.com/EAWic8F.png)
