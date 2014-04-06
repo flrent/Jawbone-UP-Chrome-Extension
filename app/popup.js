@@ -8,8 +8,15 @@ var Reporter = (function () {
 
 
     var _parseTrends = function(data) {
-      var lastTrend = data.data[data.data.length-1][1];
-      $('.progress').html('<div class="progress-bar" role="progressbar" aria-valuenow="'+lastTrend.s_quality+'%" aria-valuemin="0" aria-valuemax="100" style="width: '+lastTrend.s_quality+'%;">'+lastTrend.s_quality+'% sleep quality</div>');
+      _.each(data.data, function(day, index, list) {
+        var data = day[1];
+        var stats = {
+          day: moment(day[0], "YYYYMMDD").format('MM/DD'),
+          walked: data.m_distance/1000,
+          s_quality: data.s_quality
+        };
+        $('.trends').append(Handlebars.templates.trends(stats));
+      });
       $('.progress-bar').addClass('progress-bar-success');
     };
 

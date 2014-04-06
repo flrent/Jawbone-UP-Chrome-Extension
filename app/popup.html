@@ -15,25 +15,25 @@
             </div>
         </div>
       </nav>
-      <br>
-
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span12">
-            <div class="progress">
-
-            </div>
+              <h5>Here are your last stats.</h5>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div class="span12 trends">
           </div>
         </div>
       </div>
 
 
-      <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+      <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="row-fluid">
               <div class="span12">
                 <p>
-                  <a class="btn btn-default btn-large" id="close">Close popup</a>
+                  <a class="btn btn-default btn-large pull-right" id="close">Close popup</a>
                   <a class="btn btn-action btn-large" id="contribute">Contribute</a>
                   <a class="btn btn-danger btn-large" id="clear">Remove authorization</a>
                 </p>
@@ -45,8 +45,11 @@
 
 
       <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="bower_components/momentjs/min/moment.min.js"></script>
+      <script type="text/javascript" src="bower_components/handlebars/handlebars.runtime.js"></script>
       <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
       <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="templates/compiled/trends.handlebars.js"></script>
       <script type="text/javascript" src="credentials.js"></script>
       <script type="text/javascript" src="oauth2.js"></script>
       <script type="text/javascript" src="authorization.js"></script>

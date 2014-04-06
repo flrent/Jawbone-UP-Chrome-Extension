@@ -29,3 +29,12 @@ pre {
   height: 300px;
   overflow: scroll;
 }
+
+.trends {
+  height:350px;
+  overflow: auto;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
