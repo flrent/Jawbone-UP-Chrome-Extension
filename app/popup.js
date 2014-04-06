@@ -40,6 +40,9 @@ var Reporter = (function () {
          window.close();
         });
       });
+      $('#contribute').on('click', function() {
+        chrome.tabs.create({url: 'https://github.com/flrent/Jawbone-UP-Chrome-Extension'}, function(){});
+      });
     };
 
     return {
