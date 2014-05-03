@@ -13,24 +13,11 @@
         "persistent": true
     },
     "permissions": [
-        "https://jawbone.com/*",
         "tabs",
         "background",
         "storage",
         "identity",
-        "tabs",
         "https://*.jawbone.com/*"
-    ],
-    "content_scripts": [
-        {
-            "matches": [
-                "https://github.com/robots.txt*"
-            ],
-            "js": [
-                "injection.js"
-            ],
-            "run_at": "document_start"
-        }
     ],
     "key":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoIIeHvog2wCoo0JgsSOUghNPH59JYLhaPb3oUkw0lTWhhGWbyYY1cXZYOGh8",
     "browser_action": {
