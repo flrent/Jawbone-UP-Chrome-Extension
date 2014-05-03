@@ -1,38 +1,31 @@
 {
-  "name": "__MSG_appName__",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "__MSG_appDescription__",
-  "icons": {
-    "16": "images/icon-16.png",
-    "128": "images/icon-128.png"
+    "name": "Jawbone UP Chrome Extension",
+    "version": "0.0.3",
+    "manifest_version": 2,
+    "description": "__MSG_appDescription__",
+    "icons": {
+        "16": "images/icon-16.png",
+        "128": "images/icon-128.png"
     },
     "default_locale": "en",
-  "background": {
-    "page": "background.html",
-    "persistent": true
-  },
-  "permissions":[
-      "https://jawbone.com/auth/oauth2/token",
-      "https://github.com/robots.txt",
-      "tabs",
-      "background",
-      "storage",
-      "tabs",
-      "https://jawbone.com/*",
-      "https://*.jawbone.com/*"
-  ],
-  "content_scripts":[{
-      "matches":["https://github.com/robots.txt*"],
-      "js":["injection.js"],
-      "run_at":"document_start"
-    }],
-  "browser_action": {
-    "default_icon": {
-      "19": "images/icon-19.png",
-      "38": "images/icon-38.png"
-      },
-      "default_title": "Jawbone-Chrome",
-      "default_popup": "popup.html"
+    "background": {
+        "page": "background.html",
+        "persistent": true
+    },
+    "permissions": [
+        "tabs",
+        "background",
+        "storage",
+        "identity",
+        "https://*.jawbone.com/*"
+    ],
+    "key":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoIIeHvog2wCoo0JgsSOUghNPH59JYLhaPb3oUkw0lTWhhGWbyYY1cXZYOGh8",
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icon-19.png",
+            "38": "images/icon-38.png"
+        },
+        "default_title": "Jawbone-Chrome",
+        "default_popup": "popup.html"
     }
 }

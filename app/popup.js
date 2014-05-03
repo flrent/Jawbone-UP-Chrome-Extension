@@ -6,7 +6,7 @@ var Reporter = (function () {
 
   _Reporter.prototype = (function() {
 
-
+    var user = {};
     var _parseTrends = function(data) {
       _.each(data.data, function(day, index, list) {
         var data = day[1];
@@ -28,13 +28,12 @@ var Reporter = (function () {
       // this.server.getData('sleeps', {}, function(data) {
       //   $('body').append('<pre>'+JSON.stringify(data)+'</pre>');
       // });
-      this.server.getData('trends', {range_duration: '7', range:'d',bucket_size:'d'}, _parseTrends);
     };
 
     var _startReporting = function(user) {
       $('h1').html('<img src="https://jawbone.com/'+user.image+'" />'+user.name);
 
-      _getUserStats.call(this);
+      _getData.call(this);
     };
 
 
@@ -52,9 +51,26 @@ var Reporter = (function () {
       });
     };
 
+    var _getData = function(callback) {
+      var that = this;
+     $.getJSON('https://jawbone.com/nudge/api/users/@me/trends',{range_duration: '7', range:'d',bucket_size:'d'}, function(data) {
+        _parseTrends.call(that, data.data)
+      });
+    };
+
+
+    var _authenticate = function(callback) {
+      chrome.runtime.sendMessage({action:'oauth2.begin'}, function(response) {
+
+        callback(response);
+      });
+    };
+
     return {
       init: function() {
-        this.server.init(_startReporting.bind(this));
+        // this.server.init();
+          _authenticate(_startReporting.bind(this));
+
         _bindEvents.call(this);
         return this;
       }
@@ -64,5 +80,5 @@ var Reporter = (function () {
   return _Reporter;
 })();
 var reporter = new Reporter({
-  server: new API()
+  // server: new API().init()
 }).init();
