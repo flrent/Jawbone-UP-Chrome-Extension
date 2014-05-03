@@ -1,31 +1,37 @@
 <!doctype html>
-<html>
+<html lang="en" ng-app=jawbone ng-csp>
     <head>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="styles/main.css">
     </head>
     <body>
 
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="row-fluid">
-              <div class="span12">
-                <h1>Jawbone UP</h1>
-              </div>
-            </div>
-        </div>
-      </nav>
+    <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span12">
-              <h5>Here are your last stats.</h5>
+          <div class="row-fluid">
+            <div class="span12" ng-controller="StatsController">
+              <h1>Hello, {{ user.name }}</h1>
+            </div>
           </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span12">
+            <h5>Here are your last stats.</h5>
         </div>
-        <div class="row-fluid">
-          <div class="span12 trends">
+      </div>
+      <div class="row-fluid">
+        <div class="span12 trends" ng-controller="StatsController">
+          <div ng-repeat="stat in stats">
+            <p>You walked <strong>{{stat.walked}}km</strong> on the {{stat.day}}.</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="{{stat.s_quality}}%" aria-valuemin="0" aria-valuemax="100" style="width: {{stat.s_quality}}%;">{{stat.s_quality}}% sleep quality</div>
+            </div>
+            <hr>
           </div>
         </div>
       </div>
+    </div>
 
 
       <nav class="navbar navbar-default navbar-fixed-bottom">
@@ -49,10 +55,12 @@
       <script type="text/javascript" src="bower_components/handlebars/handlebars.runtime.js"></script>
       <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
       <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="templates/compiled/trends.handlebars.js"></script>
-      <script type="text/javascript" src="credentials.js"></script>
-      <script type="text/javascript" src="oauth2.js"></script>
-      <script type="text/javascript" src="authorization.js"></script>
-      <script type="text/javascript" src="popup.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script type="text/javascript" src="app/modules/angular-underscore.min.js"></script>
+
+      <script type="text/javascript" src="app/modules/ui-bootstrap-0.9.0.min.js"></script>
+      <script src="app/app.js"></script>
+      <script src="app/services/api.js"></script>
+      <script src="app/controllers/controllers.js"></script>
     </body>
 </html>
