@@ -2,30 +2,32 @@
 <html lang="en" ng-app=jawbone ng-csp>
     <head>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
     </head>
     <body>
 
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
-          <div class="row-fluid">
-            <div class="span12" ng-controller="StatsController">
+          <div class="row">
+            <div class="col-md-12" ng-controller="StatsController">
+              <img src="https://jawbone.com/{{user.image}}" class="profilePic">
               <h1>Hello, {{ user.name }}</h1>
             </div>
           </div>
       </div>
     </nav>
     <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span12">
+      <div class="row">
+        <div class="col-md-12">
             <h5>Here are your last stats.</h5>
         </div>
       </div>
-      <div class="row-fluid">
-        <div class="span12 trends" ng-controller="StatsController">
+      <div class="row">
+        <div class="col-md-12 trends" ng-controller="StatsController">
           <div ng-repeat="stat in stats">
             <p>You walked <strong>{{stat.walked}}km</strong> on the {{stat.day}}.</p>
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="{{stat.s_quality}}%" aria-valuemin="0" aria-valuemax="100" style="width: {{stat.s_quality}}%;">{{stat.s_quality}}% sleep quality</div>
+              <div class="{{stat.cssClass}}" role="progressbar" aria-valuenow="{{stat.s_quality}}%" aria-valuemin="0" aria-valuemax="100" style="width: {{stat.s_quality}}%;">{{stat.s_quality}}% sleep quality</div>
             </div>
             <hr>
           </div>
@@ -34,14 +36,14 @@
     </div>
 
 
-      <nav class="navbar navbar-default navbar-fixed-bottom">
+      <nav class="navbar navbar-default navbar-fixed-bottom" ng-controller="ActionsController">
         <div class="container-fluid">
             <div class="row-fluid">
               <div class="span12">
                 <p>
-                  <a class="btn btn-default btn-large pull-right" id="close">Close popup</a>
-                  <a class="btn btn-action btn-large" id="contribute">Contribute</a>
-                  <a class="" id="clear">Remove authorization</a>
+                  <a  href=""  class="btn btn-default btn-large pull-right" ng-click="close()">Close popup</a>
+                  <a class="btn btn-action btn-large" href="" ng-click="contribute()">Contribute</a>
+                  <a  href="" class="btn" ng-click="clear()">Remove authorization</a>
                 </p>
               </div>
             </div>

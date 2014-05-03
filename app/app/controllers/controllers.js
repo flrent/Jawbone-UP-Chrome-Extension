@@ -17,9 +17,28 @@ angular.module('jawbone')
         walked: data.m_distance/1000,
         s_quality: data.s_quality
       };
+      var cssClass = "progress-bar progress-bar-";
+      if(data.s_quality>75) cssClass+="success";
+      else if(data.s_quality>60) cssClass+="info";
+      else if(data.s_quality>40) cssClass+="warning";
+      else cssClass+="danger";
+      stats.cssClass = cssClass;
      $scope.stats.push(stats);
     });
    $scope.$apply();
   });
 
+}])
+.controller('ActionsController', ['$scope', function($scope, API) {
+  $scope.contribute = function() {
+    chrome.tabs.create({url: 'https://github.com/flrent/Jawbone-UP-Chrome-Extension'}, function(){});
+  };
+  $scope.clear = function() {
+    chrome.storage.local.clear(function() {
+      window.close();
+    });
+  };
+  $scope.close = function() {
+   window.close();
+  };
 }]);
