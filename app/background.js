@@ -9,9 +9,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if(value.user === undefined || value.user.token === undefined) {
             console.log(chrome.identity.getRedirectURL());
             chrome.identity.launchWebAuthFlow({
-              'url': 'https://jawbone.com/auth/oauth2/auth?response_type=code&client_id=WtzakOFOnN4&redirect_uri=https://ejpbonaeemppmlocldljfnbkgaanlhag.chromiumapp.org/&scope=extended_readsleep_read',
+              'url': 'https://jawbone.com/auth/oauth2/auth?response_type=code&client_id=WtzakOFOnN4&redirect_uri=https://imjkegdfgajgdbgeondmlgddalgeefij.chromiumapp.org/&scope=extended_readsleep_read',
               'interactive': true
             }, function(url) { 
+              console.log(url);
                var token = url.slice(parseInt(url.indexOf("?code="), 10)+6, url.length);
                
                $.getJSON('https://jawbone.com/nudge/api/users/@me/', {access_token: token})
