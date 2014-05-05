@@ -28,7 +28,7 @@
             <p>You walked <strong>{{stat.walked}}km</strong> on the {{stat.day}}.</p>
             <div class="progress">
               <div class="progress-bar"
-                   ng-class="{'progress-bar-success':s_quality>75,'progress-bar-info':s_quality>60,'progress-bar-warning':s_quality>40,'progress-bar-danger':s_quality<40}"
+                   ng-class="{'progress-bar-success':stat.s_quality>75,'progress-bar-info':stat.s_quality>60,'progress-bar-warning':stat.s_quality>40,'progress-bar-danger':stat.s_quality<40}"
                    role="progressbar" aria-valuenow="{{stat.s_quality}}%" aria-valuemin="0" aria-valuemax="100"
                    style="width: {{stat.s_quality}}%;">{{stat.s_quality}}% sleep quality</div>
             </div>

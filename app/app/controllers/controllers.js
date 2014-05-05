@@ -17,7 +17,7 @@ angular.module('jawbone')
         walked: data.m_distance/1000,
         s_quality: data.s_quality
       };
-      $scope.s_quality = data.s_quality;
+      stats.s_quality = data.s_quality;
      $scope.stats.push(stats);
     });
    $scope.$apply();
