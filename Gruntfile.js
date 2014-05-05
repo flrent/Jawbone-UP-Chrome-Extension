@@ -295,6 +295,10 @@ module.exports = function (grunt) {
         'compress'
     ]);
 
+    grunt.registerTask('js', [
+        'jshint'
+    ]);
+
     grunt.registerTask('default', [
         'jshint',
         'test',
