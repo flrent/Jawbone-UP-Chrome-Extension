@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-csp style="height:600px;width:600px;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- build:css recorder.css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="screen">
+  <link rel="stylesheet" href="bower_components/angular/angular-csp.css" type="screen">
+  <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/recorder.css" type="screen">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <!-- endbuild -->
+  <link href='http://fonts.googleapis.com/css?family=Gudea:400,700,400italic' rel='stylesheet' type='text/css'>
+  <title>BugBuster Recorder</title>
+</head>
+
+<body class="bb-recorder">
+
+<div ng-app="recorder" class="main-container" ng-controller="ApplicationController">
+
+  <nav class="navbar main-navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <a class="logo" ng-click="discoverBB()" href=""></a>
+        <a class="btn btn-default pull-right" href="#/settings"><i class="fa fa-cog"></i> Settings</a>
+      </div>
+    </div>
+  </nav>
+
+  <div ui-view></div>
+
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container-fluid">
+       <div class="row-fluid">
+      <button class="btn btn-default" ng-click="reportIssue()">Support</button>
+      <button class="btn btn-default pull-right" ng-click="close()">Close</button>
+      </div>
+    </div>
+  </nav>
+
+</div>
+
+
+
+<!-- build:js app.js -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="/scripts/app/modules/angular-underscore.min.js"></script>
+<script type="text/javascript" src="/scripts/app/modules/ui-bootstrap-0.9.0.min.js"></script>
+<script type="text/javascript" src="/scripts/app/modules/templates.js"></script>
+<script src="scripts/dom_helper.js"></script>
+<script src="scripts/common.js"></script>
+<script src="scripts/app/app.js"></script>
+<script src="scripts/app/services/storage.js"></script>
+<script src="scripts/app/services/api.js"></script>
+<script src="scripts/app/controllers/application.js"></script>
+<script src="scripts/app/controllers/record_list.js"></script>
+<script src="scripts/app/controllers/record.js"></script>
+<script src="scripts/app/controllers/record_export.js"></script>
+<script src="scripts/app/controllers/record_details.js"></script>
+<script src="scripts/app/controllers/selector_list.js"></script>
+<script src="scripts/app/controllers/settings.js"></script>
+<!-- endbuild -->
+</body>
+</html>

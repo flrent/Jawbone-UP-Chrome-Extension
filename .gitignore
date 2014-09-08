@@ -1,0 +1,12 @@
+node_modules
+temp
+.tmp
+dist
+app.crx
+dist.crx
+.sass-cache
+app/bower_components
+test/bower_components
+package
+.idea
+app/scripts/app/modules/templates.js
