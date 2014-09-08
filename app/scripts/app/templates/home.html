@@ -1,158 +1,49 @@
-<div class="container-fluid list home" ng-if="!isRecording && !isSelecting">
-  <div class="demo align-center recorder">
-    <div class="headline">
-      <h2>Record a test scenario</h2>
-      <hr>
-    </div>
-
-    <h4>
-      You have
-      <a href="#/records" ng-if="records.length>0">
-        <span ng-if="records.length==1">1 scenario</span>
-        <span ng-if="records.length!=1">{{records.length}} scenarios</span>
-      </a>
-      <span ng-if="!records.length">no scenario yet</span>
-    </h4>
-
-    <h2>
-      <a href="" ng-click="startRecording()"><i class="fa fa-video-camera success"></i></a>
-    </h2>
-
-    <p>
-      <button ng-if="!isRecording && !disabled" ng-click="startRecording()" class="btn btn-success">Start recording</button>
-      <button ng-if="disabled" class="btn btn-danger" disabled>This website is not supported</button>
-    </p>
-  </div>
-
-  <div class="demo align-center selector">
-    <div class="headline">
-      <h2>Find unique CSS selectors</h2>
-      <hr>
-    </div>
-
-    <h4>
-      You have
-      <a href="#/selectors" ng-if="selectors.length>0">
-        <span ng-if="selectors.length==1">1 selector</span>
-        <span ng-if="selectors.length!=1">{{selectors.length}} selectors</span>
-      </a>
-      <span ng-if="!selectors.length">no selectors yet</span>
-    </h4>
-
-    <h2>
-      <a href="" ng-click="startSelecting()"><i class="fa fa-search primary"></i></a>
-    </h2>
-    <p>
-      <button ng-if="!isSelecting && !disabled" ng-click="startSelecting()" class="btn btn-primary">Start selecting</button>
-      <button ng-if="disabled" class="btn btn-danger" disabled>This website is not supported</button>
-    </p>
-  </div>
-
-  <div style="clear:both"></div>
-
-  <div ng-if="apiKeyChecked && !validApiKey" class="align-center bb-home-teaser">
-  <hr>
-    <div class="left">
-      <p><a href="" ng-click="discoverBB()"><img src="../images/bb-demo.png" width="70%" alt="BugBuster"></a></p>
-    </div>
-
-    <div class="right">
-      <p>BugBuster is a cloud-based web app testing platform on which you can create comprehensive test plans to find out where and when your application could break.</p>
-      <br>
-      <p style='text-align:center;margin-top:-10px;'>
-        <button class="btn btn-default btn-info-bb" ng-click="discoverBB()">Sign up for a 14-day free trial</button><br><small>(no credit card required)</small>
-        <br>or <a href="#/settings">Configure your existing account</a>
-      </p>
-    </div>
-  </div>
-
-  <div ng-if="validApiKey" class="align-center bb-home-teaser">
-    <div class="left">
-    <br>
-      <p>The extension will record your actions as you interact with the page.</p>
-      <br>
-      <p>Right click on the page to :</p>
-      <ul>
-        <li>add assertions on elements such as text, images, links</li>
-        <li>insert random values such as words, names, email... in form inputs</li>
-      </ul>
-      <p>Please <a href=""  ng-click="reportIssue()">contact us</a> if you find any issues using this recorder.</p>
-    </div>
-    <div class="right">
-      <br>
-      <p>Hover on elements of the page:</p>
-      <ul>
-        <li>click to copy to your clipboard the element's unique CSS selector</li>
-        <li>or open your selectors' list to see them all</li>
-      </ul>
-      <p>You can use these selectors for web development or in BugBuster to customize test scenarios (for instance to blacklist elements, or focus on an area during Smart Exploration).</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="container-fluid list" ng-if="isRecording">
-
-  <div class="demo align-center">
-    <div class="home-recording">
-      <p style="margin-bottom: -20px;"><i class="fa fa-video-camera"></i></p>
-
-      <h2 ng-if="isRecordingCurrentTab">
-        You are currently recording this tab.
-      </h2>
-      <h2 ng-if="!isRecordingCurrentTab">
-        You are currently recording <a href="#" ng-click="switchToRecordingTab();">another tab</a>.
-      </h2>
-      <p ng-if="!isRecordingCurrentTab">If you want to record the current tab, stop the recording in the other tab and start again in this one.</p>
-      <p ng-if="isRecordingCurrentTab">
-        Your navigation and actions will be recorded.<br/>
-        Right click on elements to add assertions to your test scenario.
-      </p>
-      <p ng-if="isRecordingCurrentTab"><button ng-click="close()" class="btn btn-default">Close this popup</button> - <button ng-click="stopRecording()" class="btn btn-danger">Stop and save recording</button></p>
-      <p><a href="" ng-click="cancelRecording()">or cancel recording</a></p>
-    </div>
-
-    <div ng-if="isRecording" class="tips container-fluid">
-      <hr>
-      <div class="">
-        <h2>Recording tips</h2>
+<div class="container-fluid list home">
+  
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+          <div class="row" style="height: 70px;">
+            <div class="col-md-12" ng-controller="StatsController">
+              <img src="https://jawbone.com/{{user.image}}" class="profilePic">
+              <h1>Hello, {{ user.name }}</h1>
+            </div>
+          </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            <h5>Here are your last stats.</h5>
+        </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
-          <p>
-            <strong ng-if="cookiesLength>0">You have {{cookiesLength}} cookies saved for this website.</strong>
-            <strong ng-if="!cookiesLength || cookiesLength==0">Cookies</strong>
-          </p>
-          <p>During replay, all scenarios start with an empty cookie jar. We therefore recommend that you clear the cookies before each recording, so as to avoid any discrepancies between record and replay.</p>
-        </div>
-        <div class="col-md-4">
-          <p><strong>Record the login</strong></p>
-          <p>Make sure you record the login phase as well so that the scenario can be replayed correctly in BugBuster.</p>
-        </div>
-        <div class="col-md-4">
-          <p><strong>Limitations</strong></p>
-          <p>The recorder currently does not support recording: <br>- inside iframes <br>- drag & drop <br>To bypass these limitations, edit the recorded script after it is exported.</p>
+        <div class="col-md-12 trends" ng-controller="StatsController">
+          <div ng-repeat="stat in stats">
+            <p>You walked <strong>{{stat.walked}}km</strong> on the {{stat.day}}.</p>
+            <div class="progress">
+              <div class="progress-bar"
+                   ng-class="{'progress-bar-success':stat.s_quality>75,'progress-bar-info':stat.s_quality>60,'progress-bar-warning':stat.s_quality>40,'progress-bar-danger':stat.s_quality<40}"
+                   role="progressbar" aria-valuenow="{{stat.s_quality}}%" aria-valuemin="0" aria-valuemax="100"
+                   style="width: {{stat.s_quality}}%;">{{stat.s_quality}}% sleep quality</div>
+            </div>
+            <hr>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-</div>
 
-<div class="container-fluid list" ng-if="isSelecting">
-  <div class="demo align-center">
-    <div class="home-recording">
-      <p><i class="fa fa-search"></i></p>
-
-      <h2 ng-if="isSelectingCurrentTab">
-        You are currently selecting elements in this tab.
-      </h2>
-      <h2 ng-if="!isSelectingCurrentTab">
-        You are currently selecting elements in <a href="#" ng-click="switchToSelectingTab();">another tab</a>.
-      </h2>
-      <p ng-if="!isSelectingCurrentTab">If you want to select elements in the current tab, stop the selection in the other tab and start again in this one.</p>
-      <p><button ng-click="stopSelecting()" ng-if="isSelectingCurrentTab" class="btn btn-danger">Stop selecting (ESC)</button></p>
-    </div>
-  </div>
-
+      <nav class="navbar navbar-default navbar-fixed-bottom" ng-controller="ActionsController">
+        <div class="container-fluid">
+            <div class="row-fluid">
+              <div class="span12">
+                <p>
+                  <a  href=""  class="btn btn-default btn-large pull-right" ng-click="close()">Close popup</a>
+                  <a class="btn btn-action btn-large" href="" ng-click="contribute()">Contribute</a>
+                  <a  href="" class="btn" ng-click="clear()">Remove authorization</a>
+                </p>
+              </div>
+            </div>
+        </div>
+      </nav>
 </div>

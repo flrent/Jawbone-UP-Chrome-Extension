@@ -27,7 +27,7 @@ var Analytics = (function (global) {
           s.parentNode.insertBefore(ga, s);
 
         global._gaq = global._gaq || [];
-        global._gaq.push(['_setAccount', 'UA-26780533-6']);
+        global._gaq.push(['_setAccount', '']);
         global._gaq.push(['_trackPageview']);
 
         _logger('Tracker inserted into the DOM.');

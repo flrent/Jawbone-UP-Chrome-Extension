@@ -1,0 +1,14 @@
+body.app {
+  background: #F9F9F9;
+  max-height: 600px;
+  overflow: hidden;
+  min-width: 600px;
+}
+
+.app .main-container {
+  /*margin-right: 15px;*/
+}
+
+.bb-recorder nav.navbar-fixed-bottom {
+  padding: 10px 0 !important;
+}
