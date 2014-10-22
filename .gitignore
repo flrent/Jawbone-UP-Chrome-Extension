@@ -8,4 +8,6 @@ build/
 node_modules
 test/node_modules
 .idea
+npm-debug.log
+dist/
 app/scripts/app/modules/templates.js
