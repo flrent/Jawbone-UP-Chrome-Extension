@@ -1,0 +1,49 @@
+<div class="container-fluid list home">
+  
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+          <div class="row" style="height: 70px;">
+            <div class="col-md-12" ng-controller="StatsController">
+              <img src="https://jawbone.com/{{user.image}}" class="profilePic">
+              <h1>Hello, {{ user.name }}</h1>
+            </div>
+          </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+            <h5>Here are your last stats.</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 trends" ng-controller="StatsController">
+          <div ng-repeat="stat in stats">
+            <p>You walked <strong>{{stat.walked}}km</strong> on the {{stat.day}}.</p>
+            <div class="progress">
+              <div class="progress-bar"
+                   ng-class="{'progress-bar-success':stat.s_quality>75,'progress-bar-info':stat.s_quality>60,'progress-bar-warning':stat.s_quality>40,'progress-bar-danger':stat.s_quality<40}"
+                   role="progressbar" aria-valuenow="{{stat.s_quality}}%" aria-valuemin="0" aria-valuemax="100"
+                   style="width: {{stat.s_quality}}%;">{{stat.s_quality}}% sleep quality</div>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <nav class="navbar navbar-default navbar-fixed-bottom" ng-controller="ActionsController">
+        <div class="container-fluid">
+            <div class="row-fluid">
+              <div class="span12">
+                <p>
+                  <a  href=""  class="btn btn-default btn-large pull-right" ng-click="close()">Close popup</a>
+                  <a class="btn btn-action btn-large" href="" ng-click="contribute()">Contribute</a>
+                  <a  href="" class="btn" ng-click="clear()">Remove authorization</a>
+                </p>
+              </div>
+            </div>
+        </div>
+      </nav>
+</div>

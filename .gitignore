@@ -2,10 +2,20 @@ node_modules
 temp
 .tmp
 dist
+<<<<<<< HEAD
 dist.zip
+=======
+app.crx
+dist.crx
+>>>>>>> 7131a1900d66bda3a69afc36788ca9df98ead0f2
 .sass-cache
 app/bower_components
 test/bower_components
 package
+<<<<<<< HEAD
 app/credentials.js
 dist.pem
+=======
+.idea
+app/scripts/app/modules/templates.js
+>>>>>>> 7131a1900d66bda3a69afc36788ca9df98ead0f2

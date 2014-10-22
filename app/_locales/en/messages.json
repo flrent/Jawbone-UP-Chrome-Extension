@@ -1,10 +1,18 @@
 {
   "appName": {
+<<<<<<< HEAD
     "message": "Jawbone-Chrome",
     "description": "The name of the application"
   },
   "appDescription": {
     "message": "See your Jawbone UP stats from your browser",
+=======
+    "message": "BugBuster Selector",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "BugBuster",
+>>>>>>> 7131a1900d66bda3a69afc36788ca9df98ead0f2
     "description": "The description of the application"
   }
 }
