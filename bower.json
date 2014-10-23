@@ -12,7 +12,9 @@
     "momentjs": "~2.8.3",
     "mocha": "~1.21.3",
     "chai": "~1.9.1",
-    "angular-xeditable": "~0.1.8"
+    "angular-xeditable": "~0.1.8",
+    "angular-charts": "~0.2.6",
+    "d3": "~3.4.13"
   },
   "devDependencies": {}
 }
