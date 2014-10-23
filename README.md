@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Jawbone-UP-chrome
 =================
 
@@ -14,7 +13,6 @@ Feel free to submit PR.
 
 ![Screenshot](http://i.imgur.com/wmGMF4b.png)
 =======
-## BugBuster Recorder
 
 ### Installation for development
 - Launch ``npm install && bower install``

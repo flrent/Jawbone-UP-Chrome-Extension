@@ -1,9 +1,9 @@
-<div class="container-fluid list home">
+<div class="list home" ng-controller="StatsController">
 
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
-          <div class="row" style="height: 70px;">
-            <div class="col-md-12" ng-controller="StatsController">
+          <div class="row header-user" style="height: 70px;">
+            <div class="col-md-12">
               <img src="https://jawbone.com/{{user.image}}" class="profilePic">
               <h1>Hello, {{ user.name }}</h1>
             </div>
@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 trends" ng-controller="StatsController">
+        <div class="col-md-12 trends">
           <div ng-repeat="stat in stats">
             <p>You walked <strong>{{stat.walked}}km</strong> on the {{stat.day}}.</p>
             <div class="progress">

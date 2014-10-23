@@ -1,10 +1,44 @@
-body.app {
-  background: #F9F9F9;
-  max-height: 600px;
-  overflow: hidden;
-  min-width: 600px;
+/* Will be compiled down to a single stylesheet with your sass files */
+
+html {
+    /* Defaults css for cssmin process */
+
 }
 
-.app .main-container {
-  /*margin-right: 15px;*/
+body {
+  width: 500px;
+  height: 500px;
+}
+
+h1 {
+  margin-top: 10px;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  font-size:26px;
+}
+
+img.profilePic {
+  float:left;
+  min-width: 50px;
+  height:50px;
+  margin-right: 10px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.navbar-fixed-bottom p {
+  margin-top: 10px;
+}
+
+pre {
+  height: 300px;
+  overflow: scroll;
+}
+
+.trends {
+  height:350px;
+  overflow: auto;
+}
+
+.navbar {
+  margin-bottom: 0;
 }

@@ -11,3 +11,4 @@ test/node_modules
 npm-debug.log
 dist/
 app/scripts/app/modules/templates.js
+app/credentials.js
