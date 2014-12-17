@@ -12,6 +12,7 @@
         "page": "background.html",
         "persistent": true
     },
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscxmkWMCOxQo+qk6n2AO28OVX9CevdlSFdEGgsMBCUUNUeeEkETwL9/qVrU30sUIsOE839mDimnIPot9KYyh4XKyB0+G76LQHl+okpVTaGScRneB0Fhy3Af5wdB7MVfJcKUoOoBPjqUZh/lXrql8Tt4zzlzKLmVM0IViyQEsYhFbv74gEQ1D6osid4ZDBN0dMvrDze4QoGLIAYYY3A/bketyJ36TARVd8RmG0NyVLIxqGxZkQ+nKAfS+UyqNxWvdOhkMew5TFDLPEdWmr4rLkgWa8MXZbTiMeyyREFDkXaXNxvwZ9LqaGTUdjvyn8jQq6LtjQZCCBQa02sZuQSLAJQIDAQAB",
     "permissions": [
         "tabs",
         "background",

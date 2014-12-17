@@ -18,7 +18,7 @@ angular.module('jawbone.controllers', ['angularCharts'])
 
   console.log('authenticating');
 
-$scope.config = {
+  $scope.config = {
     title: 'Products',
     tooltips: true,
     labels: false,
